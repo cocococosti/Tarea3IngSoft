@@ -4,4 +4,4 @@ Equipo:
 
 Constanza Abarca 13-10000
 
-Debylson Rome 13-11270
+Denylson Rome 13-11270
