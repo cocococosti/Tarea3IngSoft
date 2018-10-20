@@ -18,3 +18,4 @@ class Seguridad:
     def ingresarUsuario(self, correo, clave):
         if correo in self.diccionario and self.diccionario.get(correo,"none")[::-1] == clave:
             return 'Usuario aceptado'
+        return 'Usuario invalido'
