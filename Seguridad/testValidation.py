@@ -20,8 +20,8 @@ class testValidation(unittest.TestCase):
     
     # Prueba para chequear que un usuario registro puede acceder al sistema
     def testIngresoUser(self):
-        self.validacion.registrarUsuario("costi.abarca@gmail.com", "pru3bA12", "pru3bA12")
-        self.assertEqual(self.validacion.ingresarUsuario("costi.abarca@gmail.com", "pru3bA12"), "Usuario aceptado")
+        self.validacion.registrarUsuario("den@gmail.com", "pru3bA12", "pru3bA12")
+        self.assertEqual(self.validacion.ingresarUsuario("den@gmail.com", "pru3bA12"), "Usuario aceptado")
     
     # Prueba para chequear que se deniega el acceso si usuario no existe 
     def testAccesoDenegado(self):
@@ -60,7 +60,6 @@ class testValidation(unittest.TestCase):
         self.assertEqual(self.validacion.ingresarUsuario("denylson97@gmail.com", "pru3bA1"), "Clave invalida")
     
     def testPassInvalido(self):
-        self.validacion.registrarUsuario("denylson97@gmail.com", "pru3bA12", "pru3bA12")
         self.assertEqual(self.validacion.ingresarUsuario("denylson97@gmail.com", "incorrecT0"), "Clave invalida")
     
     def testDatosInv(self):
@@ -73,10 +72,10 @@ class testValidation(unittest.TestCase):
         self.assertEqual(self.validacion.registrarUsuario("costi.abarca@gmail.com", "pru3b33A1", "pru3b33A1"), "Correo electronico invalido")
     
     def testRegistroVacio(self):
-        self.assertEqual(self.validacion.registrarUsuario("", "", ""), "Correo electronico invalido")
+        self.assertEqual(self.validacion.registrarUsuario("", "", ""), "Debe llenar campos")
     
     def testIngresoVacio(self):
-        self.assertEqual(self.validacion.ingresarUsuario("", ""), "Correo electronico invalido")
+        self.assertEqual(self.validacion.ingresarUsuario("", ""), "Debe llenar campos")
         
         
         

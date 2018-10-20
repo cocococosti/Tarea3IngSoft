@@ -20,6 +20,14 @@ class Seguridad:
     # Metodos de la clase seguridad
 
     def registrarUsuario(self, correo, clave1, clave2):
+        
+        # Verificar que ya no exista un usuario con el mismo correo
+        if correo in self.diccionario:
+            return "Correo electronico invalido"
+        
+        if (correo == "" or clave1=="" or clave2==""):
+            return "Debe llenar campos"
+        
         # Verificamos que el correo electronico ingresado tenga el formato especificado por el RFC 822
         # utilizando el método validate_email
         if validate_email(correo):
@@ -57,6 +65,9 @@ class Seguridad:
         
     def ingresarUsuario(self, correo, clave):
         # Comprobamos que el correo se encuentre en el diccionario
+        
+        if (correo == "" or clave==""):
+            return "Debe llenar campos"
 
         # Si el correo esta en el diccionario y la clave coincide con la guardada, entonces
         # el usuario es aceptado en el sistema
