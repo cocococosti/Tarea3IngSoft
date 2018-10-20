@@ -12,7 +12,9 @@ class Seguridad:
     # Metodos de la clase seguridad
 
     def registrarUsuario(self, correo, clave1, clave2):
-        pass
+        self.diccionario[correo] = clave1[::-1]
+        return 'Usuario aceptado'
     
     def ingresarUsuario(self, correo, clave):
-        pass
+        if correo in self.diccionario and self.diccionario.get(correo,"none")[::-1] == clave:
+            return 'Usuario aceptado'
